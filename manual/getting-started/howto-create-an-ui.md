@@ -67,9 +67,12 @@ namespace MyGame
 
             // retrieve UI component of the entity 
             var uiComponent = Entity.Get<UIComponent>();
+            
+            // if it's a new UIComponent without page
+            uiComponent.Page = new UIPage();            
 
             // define the layout UI by setting the root element
-            uiComponent.RootElement = CreateLayout();
+            uiComponent.Page.RootElement = CreateLayout();
         }
 
         // Create the UI layout. Returns the root of the hierarchy
